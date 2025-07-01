@@ -4,9 +4,10 @@ import {
   FolderOpen, 
   Monitor
 } from "lucide-react";
-import { SiJavascript, SiPython, SiReact, SiGooglechrome } from "react-icons/si";
+import { SiJavascript, SiPython, SiReact, SiGooglechrome, SiNodedotjs, SiTypescript } from "react-icons/si";
 import ProfileCard from "@/components/ProfileCard";
 import SplashCursor from "@/components/SplashCursor";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,6 +23,39 @@ export default function Home() {
   const handleContactClick = () => {
     console.log("Contact clicked");
   };
+
+  const skillsData = [
+    {
+      title: "JavaScript",
+      description: "Modern JS, ES6+, async programming",
+      id: 1,
+      icon: <SiJavascript className="carousel-icon" style={{ color: "#F7DF1E" }} />,
+    },
+    {
+      title: "React",
+      description: "React, Next.js, hooks, state management",
+      id: 2,
+      icon: <SiReact className="carousel-icon" style={{ color: "#61DAFB" }} />,
+    },
+    {
+      title: "TypeScript",
+      description: "Type-safe development, advanced patterns",
+      id: 3,
+      icon: <SiTypescript className="carousel-icon" style={{ color: "#3178C6" }} />,
+    },
+    {
+      title: "Node.js",
+      description: "Backend development, APIs, databases",
+      id: 4,
+      icon: <SiNodedotjs className="carousel-icon" style={{ color: "#339933" }} />,
+    },
+    {
+      title: "Python",
+      description: "Web development, automation, AI/ML",
+      id: 5,
+      icon: <SiPython className="carousel-icon" style={{ color: "#3776AB" }} />,
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-portfolio text-white">
@@ -75,56 +109,55 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom Section - Icon Grid */}
-        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+        {/* Bottom Section - Skills Carousel & Other Icons */}
+        <div className="mt-32 max-w-6xl mx-auto">
           
-          {/* Skills */}
-          <div className="text-center">
-            <div className="relative mb-6">
-              <div className="w-32 h-32 mx-auto skill-icon rounded-full flex items-center justify-center p-6">
-                <div className="grid grid-cols-2 gap-2">
-                  <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <SiJavascript className="w-5 h-5 text-black" />
-                  </div>
-                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                    <div className="w-4 h-4 bg-white transform rotate-45"></div>
-                  </div>
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                    <SiPython className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                    <SiGooglechrome className="w-5 h-5 text-white" />
+          {/* Skills Carousel */}
+          <div className="text-center mb-16">
+            <h3 className="text-3xl font-bold mb-8 text-white">My Skills</h3>
+            <div className="flex justify-center">
+              <div style={{ height: '400px', position: 'relative' }}>
+                <Carousel
+                  items={skillsData}
+                  baseWidth={350}
+                  autoplay={true}
+                  autoplayDelay={3000}
+                  pauseOnHover={true}
+                  loop={true}
+                  round={false}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Projects & Folder Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
+            
+            {/* Projects */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <div className="w-32 h-32 mx-auto project-window flex items-center justify-center p-6">
+                  <div className="w-full h-full bg-blue-600/50 rounded-lg p-3">
+                    <div className="space-y-2">
+                      <div className="h-2 bg-blue-400 rounded w-3/4"></div>
+                      <div className="h-2 bg-blue-300 rounded w-1/2"></div>
+                      <div className="h-8 bg-blue-500 rounded w-2/3"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <h3 className="text-2xl font-bold">Projects</h3>
             </div>
-            <h3 className="text-2xl font-bold">Skills</h3>
-          </div>
 
-          {/* Projects */}
-          <div className="text-center">
-            <div className="relative mb-6">
-              <div className="w-32 h-32 mx-auto project-window flex items-center justify-center p-6">
-                <div className="w-full h-full bg-blue-600/50 rounded-lg p-3">
-                  <div className="space-y-2">
-                    <div className="h-2 bg-blue-400 rounded w-3/4"></div>
-                    <div className="h-2 bg-blue-300 rounded w-1/2"></div>
-                    <div className="h-8 bg-blue-500 rounded w-2/3"></div>
-                  </div>
+            {/* Folder */}
+            <div className="text-center">
+              <div className="relative mb-6">
+                <div className="w-32 h-32 mx-auto folder-icon flex items-center justify-center">
+                  <FolderOpen className="w-16 h-16 text-white" />
                 </div>
               </div>
+              <h3 className="text-2xl font-bold">Folder</h3>
             </div>
-            <h3 className="text-2xl font-bold">Projects</h3>
-          </div>
-
-          {/* Folder */}
-          <div className="text-center">
-            <div className="relative mb-6">
-              <div className="w-32 h-32 mx-auto folder-icon flex items-center justify-center">
-                <FolderOpen className="w-16 h-16 text-white" />
-              </div>
-            </div>
-            <h3 className="text-2xl font-bold">Folder</h3>
           </div>
         </div>
       </div>

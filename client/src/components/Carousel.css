@@ -1,0 +1,138 @@
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid hsl(215, 85%, 45%);
+  border-radius: 24px;
+  padding: 16px;
+  --outer-r: 24px;
+  --p-distance: 12px;
+  background: linear-gradient(145deg, hsl(220, 30%, 12%) 0%, hsl(220, 30%, 8%) 100%);
+}
+
+.carousel-track {
+  display: flex;
+}
+
+.carousel-item {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid hsl(215, 85%, 55%);
+  border-radius: calc(var(--outer-r) - var(--p-distance));
+  background: linear-gradient(145deg, hsl(220, 30%, 15%) 0%, hsl(220, 30%, 10%) 100%);
+  overflow: hidden;
+  cursor: grab;
+  box-shadow: 0 4px 15px hsla(215, 85%, 45%, 0.2);
+}
+
+.carousel-item:active {
+  cursor: grabbing;
+}
+
+.carousel-container.round {
+  border: 1px solid #555;
+}
+
+.carousel-item.round {
+  background-color: #0D0716;
+  position: relative;
+  bottom: .1em;
+  border: 1px solid #555;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.carousel-item-header.round {
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-indicators-container.round {
+  position: absolute;
+  z-index: 2;
+  bottom: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-indicator.active {
+  background-color: #333333;
+}
+
+.carousel-indicator.inactive {
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+.carousel-item-header {
+  margin-bottom: 16px;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+.carousel-icon-container {
+  display: flex;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #fff 0%, #f0f0f0 100%);
+  box-shadow: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+}
+
+.carousel-icon {
+  height: 20px;
+  width: 20px;
+  color: #060010;
+}
+
+.carousel-item-content {
+  padding: 20px;
+  padding-bottom: 20px;
+}
+
+.carousel-item-title {
+  margin-bottom: 4px;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+}
+
+.carousel-item-description {
+  font-size: 14px;
+  color: #fff;
+}
+
+.carousel-indicators-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.carousel-indicators {
+  margin-top: 16px;
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.carousel-indicator {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.carousel-indicator.active {
+  background-color: #fff;
+}
+
+.carousel-indicator.inactive {
+  background-color: #555;
+}
