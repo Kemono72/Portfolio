@@ -9,6 +9,7 @@ import ProfileCard from "@/components/ProfileCard";
 import SplashCursor from "@/components/SplashCursor";
 import Carousel from "@/components/Carousel";
 import GooeyNav from "@/components/GooeyNav";
+import CircularGallery from "@/components/CircularGallery";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,9 +28,20 @@ export default function Home() {
 
   const navigationItems = [
     { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
+    { label: "Skills", href: "#skills" },
     { label: "Contact", href: "#contact" },
+  ];
+
+  const projectsData = [
+    { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'E-Commerce Platform' },
+    { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'React Dashboard' },
+    { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Mobile App UI' },
+    { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Portfolio Website' },
+    { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Chat Application' },
+    { image: `https://picsum.photos/seed/6/800/600?grayscale`, text: 'Task Manager' },
+    { image: `https://picsum.photos/seed/7/800/600?grayscale`, text: 'Social Media App' },
+    { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'Weather App' },
   ];
 
   const skillsData = [
@@ -121,12 +133,33 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom Section - Skills Carousel & Other Icons */}
+        {/* Bottom Section - Projects Gallery */}
         <div className="mt-32 max-w-6xl mx-auto">
           
-          {/* Skills Carousel */}
+          {/* Projects Gallery */}
           <div className="text-center mb-16">
-            <h3 className="text-3xl font-bold mb-8 text-white">My Skills</h3>
+            <h3 className="text-3xl font-bold mb-8 text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                Featured Projects
+              </span>
+            </h3>
+            <div style={{ height: '600px', position: 'relative' }}>
+              <CircularGallery 
+                items={projectsData}
+                bend={3} 
+                textColor="#ffffff" 
+                borderRadius={0.05} 
+              />
+            </div>
+          </div>
+
+          {/* Skills Section */}
+          <div className="text-center">
+            <h3 className="text-3xl font-bold mb-8 text-white">
+              <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                Skills & Technologies
+              </span>
+            </h3>
             <div className="flex justify-center">
               <div style={{ height: '400px', position: 'relative' }}>
                 <Carousel
@@ -139,36 +172,6 @@ export default function Home() {
                   round={false}
                 />
               </div>
-            </div>
-          </div>
-
-          {/* Projects & Folder Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl mx-auto">
-            
-            {/* Projects */}
-            <div className="text-center">
-              <div className="relative mb-6">
-                <div className="w-32 h-32 mx-auto project-window flex items-center justify-center p-6">
-                  <div className="w-full h-full bg-blue-600/50 rounded-lg p-3">
-                    <div className="space-y-2">
-                      <div className="h-2 bg-blue-400 rounded w-3/4"></div>
-                      <div className="h-2 bg-blue-300 rounded w-1/2"></div>
-                      <div className="h-8 bg-blue-500 rounded w-2/3"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold">Projects</h3>
-            </div>
-
-            {/* Folder */}
-            <div className="text-center">
-              <div className="relative mb-6">
-                <div className="w-32 h-32 mx-auto folder-icon flex items-center justify-center">
-                  <FolderOpen className="w-16 h-16 text-white" />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold">Folder</h3>
             </div>
           </div>
         </div>
