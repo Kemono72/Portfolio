@@ -8,6 +8,7 @@ import { SiJavascript, SiPython, SiReact, SiGooglechrome, SiNodedotjs, SiTypescr
 import ProfileCard from "@/components/ProfileCard";
 import SplashCursor from "@/components/SplashCursor";
 import Carousel from "@/components/Carousel";
+import GooeyNav from "@/components/GooeyNav";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,6 +24,13 @@ export default function Home() {
   const handleContactClick = () => {
     console.log("Contact clicked");
   };
+
+  const navigationItems = [
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   const skillsData = [
     {
@@ -60,15 +68,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-portfolio text-white">
       <SplashCursor />
-      {/* Navigation */}
-      <nav className="flex justify-center py-8">
-        <div className="flex space-x-8 text-lg">
-          <button onClick={() => handleNavigation('about')} className="hover:text-blue-400 transition-colors">About</button>
-          <button onClick={() => handleNavigation('skills')} className="hover:text-blue-400 transition-colors">Skills</button>
-          <button onClick={() => handleNavigation('projects')} className="hover:text-blue-400 transition-colors">Projects</button>
-          <button onClick={() => handleNavigation('contact')} className="hover:text-blue-400 transition-colors">Contact</button>
-        </div>
-      </nav>
+      {/* Gooey Navigation */}
+      <div className="flex justify-center py-8">
+        <GooeyNav
+          items={navigationItems}
+          particleCount={15}
+          particleDistances={[90, 10]}
+          particleR={100}
+          initialActiveIndex={0}
+          animationTime={600}
+          timeVariance={300}
+          colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+        />
+      </div>
 
       {/* Main Content */}
       <div className="container mx-auto px-8 py-16">
