@@ -1,23 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
-  Code, 
-  Rocket, 
   FolderOpen, 
-  Mail, 
-  ArrowRight,
-  Circle
+  User
 } from "lucide-react";
-
-interface NavigationCard {
-  title: string;
-  description: string;
-  icon: React.ReactNode;
-  color: string;
-  route: string;
-}
+import { SiJavascript, SiPython, SiReact, SiGooglechrome } from "react-icons/si";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,122 +13,119 @@ export default function Home() {
     setIsLoaded(true);
   }, []);
 
-  const navigationItems: NavigationCard[] = [
-    {
-      title: "Skills",
-      description: "Technologies & expertise",
-      icon: <Code className="w-8 h-8" />,
-      color: "text-blue-400",
-      route: "/skills"
-    },
-    {
-      title: "Projects",
-      description: "Featured work & demos",
-      icon: <Rocket className="w-8 h-8" />,
-      color: "text-green-400",
-      route: "/projects"
-    },
-    {
-      title: "Folder",
-      description: "All my work & files",
-      icon: <FolderOpen className="w-8 h-8" />,
-      color: "text-yellow-400",
-      route: "/portfolio"
-    },
-    {
-      title: "Contact",
-      description: "Let's connect & chat",
-      icon: <Mail className="w-8 h-8" />,
-      color: "text-purple-400",
-      route: "/contact"
-    }
-  ];
-
-  const handleViewProjects = () => {
-    // TODO: Navigate to projects section or page
-    console.log("View Projects clicked");
-  };
-
-  const handleNavigation = (route: string) => {
-    // TODO: Implement actual navigation
-    console.log("Navigate to:", route);
+  const handleNavigation = (section: string) => {
+    console.log("Navigate to:", section);
   };
 
   return (
-    <div className="min-h-screen bg-dark-primary text-white">
-      <div className="min-h-screen flex flex-col lg:flex-row">
-        
-        {/* Left Profile Card */}
-        <div className="lg:w-80 lg:min-h-screen bg-dark-secondary border-r border-dark-tertiary p-8 flex flex-col items-center justify-center">
-          <div className="text-center">
-            {/* Profile Image */}
-            <div className="w-32 h-32 lg:w-40 lg:h-40 rounded-full mx-auto mb-6 border-4 border-blue-500 shadow-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-4xl lg:text-5xl font-bold text-white">
-              AR
-            </div>
-            
-            {/* Name */}
-            <h2 className="text-xl lg:text-2xl font-bold mb-4">Aryan Raj Joshi</h2>
-            
-            {/* Status Badge */}
-            <Badge variant="outline" className="bg-green-500/20 border-green-500/30 text-green-400 hover:bg-green-500/30">
-              <Circle className="w-2 h-2 fill-current animate-pulse-dot mr-2" />
-              Available for work
-            </Badge>
-          </div>
+    <div className="min-h-screen bg-portfolio text-white">
+      {/* Navigation */}
+      <nav className="flex justify-center py-8">
+        <div className="flex space-x-8 text-lg">
+          <button onClick={() => handleNavigation('about')} className="hover:text-blue-400 transition-colors">About</button>
+          <button onClick={() => handleNavigation('skills')} className="hover:text-blue-400 transition-colors">Skills</button>
+          <button onClick={() => handleNavigation('projects')} className="hover:text-blue-400 transition-colors">Projects</button>
+          <button onClick={() => handleNavigation('contact')} className="hover:text-blue-400 transition-colors">Contact</button>
         </div>
+      </nav>
 
-        {/* Right Main Content */}
-        <div className="flex-1 flex flex-col justify-center p-8 lg:p-16">
+      {/* Main Content */}
+      <div className="container mx-auto px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Hero Section */}
-          <div className="max-w-4xl mx-auto w-full">
-            
-            {/* Main Heading */}
-            <h1 className={`text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* Left Side - ID Badge */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Badge Lanyard */}
+              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 w-12 h-16 bg-gradient-to-b from-blue-500 to-blue-600 rounded-t-full border-4 border-blue-400"></div>
+              
+              {/* ID Badge */}
+              <div className="id-badge relative max-w-xs mx-auto">
+                {/* Profile Image */}
+                <div className="w-32 h-32 mx-auto mb-4 rounded-lg overflow-hidden border-4 border-white/20">
+                  <div className="w-full h-full bg-gray-600 rounded-lg flex items-center justify-center">
+                    <User className="w-16 h-16 text-gray-400" />
+                  </div>
+                </div>
+                
+                {/* Name on Badge */}
+                <h3 className="text-white text-xl font-bold text-center">Aryan Raj Joshi</h3>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side - Main Content */}
+          <div className="text-center lg:text-left">
+            <h1 className={`text-5xl lg:text-7xl font-bold mb-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <span className="gradient-text">Aryan Raj Joshi</span>
             </h1>
             
-            {/* Subtext */}
-            <p className={`text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed max-w-2xl transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <p className={`text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               I build fast, think deep, and bring digital quests to life.
             </p>
             
-            {/* CTA Button */}
             <Button 
-              onClick={handleViewProjects}
-              className={`btn-gradient text-white font-semibold py-4 px-8 rounded-lg shadow-lg mb-16 text-lg transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              onClick={() => handleNavigation('projects')}
+              className={`btn-gradient text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               size="lg"
             >
-              <span>View My Projects</span>
-              <ArrowRight className="ml-2 w-5 h-5" />
+              View My Projects
             </Button>
-            
           </div>
-          
-          {/* Navigation Grid */}
-          <div className="max-w-4xl mx-auto w-full">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {navigationItems.map((item, index) => (
-                <Card 
-                  key={item.title}
-                  onClick={() => handleNavigation(item.route)}
-                  className={`bg-dark-secondary border-dark-tertiary p-6 text-center card-hover cursor-pointer transition-all duration-700 hover:border-blue-500/30 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ 
-                    transitionDelay: `${500 + index * 100}ms` 
-                  }}
-                >
-                  <div className={`mb-4 ${item.color} flex justify-center`}>
-                    {item.icon}
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2 text-white">{item.title}</h3>
-                  <p className="text-gray-400 text-sm">{item.description}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-          
         </div>
-        
+
+        {/* Bottom Section - Icon Grid */}
+        <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+          
+          {/* Skills */}
+          <div className="text-center">
+            <div className="relative mb-6">
+              <div className="w-32 h-32 mx-auto skill-icon rounded-full flex items-center justify-center p-6">
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                    <SiJavascript className="w-5 h-5 text-black" />
+                  </div>
+                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-white transform rotate-45"></div>
+                  </div>
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    <SiPython className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                    <SiGooglechrome className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold">Skills</h3>
+          </div>
+
+          {/* Projects */}
+          <div className="text-center">
+            <div className="relative mb-6">
+              <div className="w-32 h-32 mx-auto project-window flex items-center justify-center p-6">
+                <div className="w-full h-full bg-blue-600/50 rounded-lg p-3">
+                  <div className="space-y-2">
+                    <div className="h-2 bg-blue-400 rounded w-3/4"></div>
+                    <div className="h-2 bg-blue-300 rounded w-1/2"></div>
+                    <div className="h-8 bg-blue-500 rounded w-2/3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold">Projects</h3>
+          </div>
+
+          {/* Folder */}
+          <div className="text-center">
+            <div className="relative mb-6">
+              <div className="w-32 h-32 mx-auto folder-icon flex items-center justify-center">
+                <FolderOpen className="w-16 h-16 text-white" />
+              </div>
+            </div>
+            <h3 className="text-2xl font-bold">Folder</h3>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -24,10 +24,12 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Dark theme colors */
-  --dark-primary: hsl(222, 84%, 5%);
-  --dark-secondary: hsl(217, 33%, 17%);
-  --dark-tertiary: hsl(215, 25%, 27%);
+  /* Portfolio theme colors */
+  --portfolio-bg: hsl(220, 35%, 8%);
+  --portfolio-card: hsl(220, 30%, 12%);
+  --portfolio-blue: hsl(215, 85%, 45%);
+  --portfolio-cyan: hsl(185, 85%, 55%);
+  --portfolio-accent: hsl(215, 85%, 65%);
 }
 
 .dark {
@@ -65,7 +67,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(224, 76%, 48%) 100%);
+    background: linear-gradient(135deg, hsl(185, 85%, 55%) 0%, hsl(215, 85%, 65%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -77,42 +79,80 @@
   
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px hsla(0, 0%, 0%, 0.3), 0 10px 10px -5px hsla(0, 0%, 0%, 0.2);
+    box-shadow: 0 20px 25px -5px hsla(215, 85%, 45%, 0.3), 0 10px 10px -5px hsla(215, 85%, 45%, 0.2);
   }
   
   .btn-gradient {
-    background: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(224, 76%, 48%) 100%);
+    background: linear-gradient(135deg, hsl(215, 85%, 45%) 0%, hsl(215, 85%, 55%) 100%);
     transition: all 0.3s ease;
   }
   
   .btn-gradient:hover {
-    background: linear-gradient(135deg, hsl(221, 83%, 53%) 0%, hsl(226, 71%, 40%) 100%);
+    background: linear-gradient(135deg, hsl(215, 85%, 50%) 0%, hsl(215, 85%, 60%) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px hsla(217, 91%, 60%, 0.4);
+    box-shadow: 0 10px 20px -5px hsla(215, 85%, 45%, 0.4);
   }
   
-  .bg-dark-primary {
-    background-color: var(--dark-primary);
+  .bg-portfolio {
+    background-color: var(--portfolio-bg);
   }
   
-  .bg-dark-secondary {
-    background-color: var(--dark-secondary);
+  .bg-portfolio-card {
+    background-color: var(--portfolio-card);
   }
   
-  .bg-dark-tertiary {
-    background-color: var(--dark-tertiary);
+  .id-badge {
+    background: linear-gradient(145deg, hsl(215, 85%, 50%) 0%, hsl(215, 85%, 60%) 100%);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 15px 40px -10px hsla(215, 85%, 45%, 0.4);
+    border: 3px solid hsl(215, 85%, 65%);
   }
   
-  .border-dark-tertiary {
-    border-color: var(--dark-tertiary);
+  .lanyard {
+    background: linear-gradient(180deg, hsl(215, 85%, 55%) 0%, hsl(215, 85%, 65%) 100%);
+    box-shadow: 0 5px 15px hsla(215, 85%, 45%, 0.3);
+  }
+  
+  .lanyard-clip {
+    background: linear-gradient(145deg, hsl(215, 85%, 45%) 0%, hsl(215, 85%, 55%) 100%);
+    box-shadow: inset 0 2px 4px hsla(0, 0%, 0%, 0.2);
+  }
+  
+  .skill-icon {
+    background: hsl(220, 30%, 15%);
+    border: 2px solid hsl(215, 85%, 45%);
+  }
+  
+  .project-window {
+    background: linear-gradient(145deg, hsl(215, 85%, 45%) 0%, hsl(215, 85%, 55%) 100%);
+    border-radius: 0.75rem;
+    position: relative;
+  }
+  
+  .project-window::before {
+    content: '';
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: hsl(0, 85%, 65%);
+    border-radius: 50%;
+    box-shadow: 1rem 0 0 hsl(45, 85%, 65%), 2rem 0 0 hsl(120, 85%, 65%);
+  }
+  
+  .folder-icon {
+    background: linear-gradient(145deg, hsl(215, 85%, 45%) 0%, hsl(215, 85%, 55%) 100%);
+    border-radius: 50%;
   }
   
   .animate-entrance {
     animation: entrance 0.6s ease-out forwards;
   }
   
-  .animate-pulse-dot {
-    animation: pulse-dot 2s ease-in-out infinite;
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
 }
 
@@ -127,11 +167,11 @@
   }
 }
 
-@keyframes pulse-dot {
+@keyframes float {
   0%, 100% {
-    opacity: 1;
+    transform: translateY(0px);
   }
   50% {
-    opacity: 0.5;
+    transform: translateY(-10px);
   }
 }
