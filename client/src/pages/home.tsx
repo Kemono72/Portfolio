@@ -10,6 +10,7 @@ import SplashCursor from "@/components/SplashCursor";
 import Carousel from "@/components/Carousel";
 import GooeyNav from "@/components/GooeyNav";
 import CircularGallery from "@/components/CircularGallery";
+import GlareHover from "@/components/GlareHover";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -160,7 +161,38 @@ export default function Home() {
                 Skills & Technologies
               </span>
             </h3>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center gap-12">
+              {/* Hackathon Badge */}
+              <div className="flex-shrink-0">
+                <GlareHover
+                  width="200px"
+                  height="200px"
+                  background="transparent"
+                  borderRadius="15px"
+                  borderColor="#333"
+                  glareColor="#ffffff"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                >
+                  <a 
+                    href="https://badges.ecampusontario.ca/app/badge/info/93007" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <img 
+                      src="https://badges.ecampusontario.ca/file/b/d/3/a/bd3af1b9be7d25a62aa60f8c31b2dce5b14dbe57a5ca0124afe6a95af1301697.png"
+                      alt="2024 Housing Hackathon - Finalist"
+                      className="w-full h-full object-contain rounded-lg"
+                    />
+                  </a>
+                </GlareHover>
+              </div>
+
+              {/* Skills Carousel */}
               <div style={{ height: '400px', position: 'relative' }}>
                 <Carousel
                   items={skillsData}
