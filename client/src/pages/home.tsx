@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { SiJavascript, SiPython, SiReact, SiGooglechrome } from "react-icons/si";
 import ProfileCard from "@/components/ProfileCard";
+import SplashCursor from "@/components/SplashCursor";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,6 +25,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-portfolio text-white">
+      <SplashCursor />
       {/* Navigation */}
       <nav className="flex justify-center py-8">
         <div className="flex space-x-8 text-lg">
