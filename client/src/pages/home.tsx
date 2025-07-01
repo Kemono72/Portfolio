@@ -161,9 +161,9 @@ export default function Home() {
                 Skills & Technologies
               </span>
             </h3>
-            <div className="flex justify-center items-center gap-12">
+            <div className="flex justify-center items-start gap-12">
               {/* Hackathon Badge - Left */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0" style={{ marginTop: '100px' }}>
                 <GlareHover
                   width="200px"
                   height="200px"
@@ -206,7 +206,7 @@ export default function Home() {
               </div>
 
               {/* Integrity Badge - Right */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0" style={{ marginTop: '100px' }}>
                 <GlareHover
                   width="200px"
                   height="200px"
