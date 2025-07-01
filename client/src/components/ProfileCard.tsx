@@ -52,7 +52,7 @@ interface ProfileCardProps {
 }
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
-  avatarUrl = "https://via.placeholder.com/400x600/333/fff?text=Avatar",
+  avatarUrl = "https://i.imgur.com/rm023nz.jpeg",
   iconUrl = "",
   grainUrl = "",
   behindGradient,
@@ -61,9 +61,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   className = "",
   enableTilt = true,
   miniAvatarUrl,
-  name = "Javi A. Torres",
+  name = "Aryan Raj Joshi",
   title = "Software Engineer",
-  handle = "javicodes",
+  handle = "Kemono_72",
   status = "Online",
   contactText = "Contact",
   showUserInfo = true,
