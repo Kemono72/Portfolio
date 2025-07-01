@@ -35,16 +35,23 @@ export default function Home() {
           
           {/* Left Side - ID Badge */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              {/* Badge Lanyard */}
-              <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 w-12 h-16 bg-gradient-to-b from-blue-500 to-blue-600 rounded-t-full border-4 border-blue-400"></div>
+            <div className="relative animate-float">
+              {/* Badge Lanyard - Extended */}
+              <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                {/* Lanyard Clip */}
+                <div className="lanyard-clip w-12 h-8 rounded-t-xl mb-2 flex items-center justify-center">
+                  <div className="w-6 h-1 bg-white/50 rounded-full"></div>
+                </div>
+                {/* Lanyard Strap */}
+                <div className="lanyard w-3 h-16 rounded-full"></div>
+              </div>
               
               {/* ID Badge */}
               <div className="id-badge relative max-w-xs mx-auto">
                 {/* Profile Image */}
-                <div className="w-32 h-32 mx-auto mb-4 rounded-lg overflow-hidden border-4 border-white/20">
-                  <div className="w-full h-full bg-gray-600 rounded-lg flex items-center justify-center">
-                    <User className="w-16 h-16 text-gray-400" />
+                <div className="w-36 h-36 mx-auto mb-6 rounded-xl overflow-hidden border-4 border-white/30 bg-gray-700">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <User className="w-20 h-20 text-gray-300" />
                   </div>
                 </div>
                 
