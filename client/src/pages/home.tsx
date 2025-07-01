@@ -107,8 +107,8 @@ export default function Home() {
               handle="Kemono_7214"
               status="Online"
               contactText="Contact Me"
-              avatarUrl="@assets/photo_1751336997885.JPG"
-              miniAvatarUrl="@assets/photo_1751336997885.JPG"
+              avatarUrl="https://i.imgur.com/rm023nz.jpeg"
+              miniAvatarUrl="https://i.imgur.com/rm023nz.jpeg"
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
