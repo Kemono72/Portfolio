@@ -104,10 +104,11 @@ export default function Home() {
             <ProfileCard
               name="Aryan Raj Joshi"
               title="Software Engineer"
-              handle="aryanjoshi"
+              handle="Kemono_7214"
               status="Online"
               contactText="Contact Me"
               avatarUrl="@assets/photo_1751336997885.JPG"
+              miniAvatarUrl="@assets/photo_1751336997885.JPG"
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
