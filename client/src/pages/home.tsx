@@ -2,9 +2,10 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { 
   FolderOpen, 
-  User
+  Monitor
 } from "lucide-react";
 import { SiJavascript, SiPython, SiReact, SiGooglechrome } from "react-icons/si";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,6 +16,10 @@ export default function Home() {
 
   const handleNavigation = (section: string) => {
     console.log("Navigate to:", section);
+  };
+
+  const handleContactClick = () => {
+    console.log("Contact clicked");
   };
 
   return (
@@ -33,32 +38,19 @@ export default function Home() {
       <div className="container mx-auto px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Left Side - ID Badge */}
+          {/* Left Side - ProfileCard */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative animate-float">
-              {/* Badge Lanyard - Extended */}
-              <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                {/* Lanyard Clip */}
-                <div className="lanyard-clip w-12 h-8 rounded-t-xl mb-2 flex items-center justify-center">
-                  <div className="w-6 h-1 bg-white/50 rounded-full"></div>
-                </div>
-                {/* Lanyard Strap */}
-                <div className="lanyard w-3 h-16 rounded-full"></div>
-              </div>
-              
-              {/* ID Badge */}
-              <div className="id-badge relative max-w-xs mx-auto">
-                {/* Profile Image */}
-                <div className="w-36 h-36 mx-auto mb-6 rounded-xl overflow-hidden border-4 border-white/30 bg-gray-700">
-                  <div className="w-full h-full flex items-center justify-center">
-                    <User className="w-20 h-20 text-gray-300" />
-                  </div>
-                </div>
-                
-                {/* Name on Badge */}
-                <h3 className="text-white text-xl font-bold text-center">Aryan Raj Joshi</h3>
-              </div>
-            </div>
+            <ProfileCard
+              name="Aryan Raj Joshi"
+              title="Software Engineer"
+              handle="aryanjoshi"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="https://via.placeholder.com/400x600/1a1a2e/fff?text=AR"
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={handleContactClick}
+            />
           </div>
 
           {/* Right Side - Main Content */}
