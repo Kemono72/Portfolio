@@ -160,11 +160,11 @@ export default function Home() {
                 Skills & Technologies
               </span>
             </h3>
-            <div className="w-full">
-              <div style={{ height: '400px', position: 'relative', width: '100%' }}>
+            <div className="flex justify-center items-center">
+              <div style={{ height: '400px', position: 'relative' }}>
                 <Carousel
                   items={skillsData}
-                  baseWidth={280}
+                  baseWidth={350}
                   autoplay={true}
                   autoplayDelay={3000}
                   pauseOnHover={true}
