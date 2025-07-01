@@ -162,7 +162,7 @@ export default function Home() {
               </span>
             </h3>
             <div className="flex justify-center items-center gap-12">
-              {/* Hackathon Badge */}
+              {/* Hackathon Badge - Left */}
               <div className="flex-shrink-0">
                 <GlareHover
                   width="200px"
@@ -192,7 +192,7 @@ export default function Home() {
                 </GlareHover>
               </div>
 
-              {/* Skills Carousel */}
+              {/* Skills Carousel - Center */}
               <div style={{ height: '400px', position: 'relative' }}>
                 <Carousel
                   items={skillsData}
@@ -203,6 +203,36 @@ export default function Home() {
                   loop={true}
                   round={false}
                 />
+              </div>
+
+              {/* Integrity Badge - Right */}
+              <div className="flex-shrink-0">
+                <GlareHover
+                  width="200px"
+                  height="200px"
+                  background="transparent"
+                  borderRadius="15px"
+                  borderColor="#333"
+                  glareColor="#ffffff"
+                  glareOpacity={0.3}
+                  glareAngle={-30}
+                  glareSize={300}
+                  transitionDuration={800}
+                  playOnce={false}
+                >
+                  <a 
+                    href="https://badges.ecampusontario.ca/app/badge/info/93009" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <img 
+                      src="https://badges.ecampusontario.ca/file/c/5/6/a/c56a342665bec15e497471d7a020cf64d377bff1b04ef90136d4a437d3bc7043.svg"
+                      alt="Integrity in Action"
+                      className="w-full h-full object-contain rounded-lg"
+                    />
+                  </a>
+                </GlareHover>
               </div>
             </div>
           </div>
