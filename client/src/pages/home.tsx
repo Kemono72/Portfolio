@@ -107,7 +107,7 @@ export default function Home() {
               handle="aryanjoshi"
               status="Online"
               contactText="Contact Me"
-              avatarUrl="https://via.placeholder.com/400x600/1a1a2e/fff?text=AR"
+              avatarUrl="@assets/photo_1751336997885.JPG"
               showUserInfo={true}
               enableTilt={true}
               onContactClick={handleContactClick}
