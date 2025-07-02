@@ -31,7 +31,6 @@ export default function Home() {
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
   ];
 
   const projectsData = [
@@ -136,7 +135,7 @@ export default function Home() {
         </div>
 
         {/* Bottom Section - Projects Gallery */}
-        <div className="mt-32 max-w-6xl mx-auto">
+        <div className="mt-32 w-full px-0">
           
           {/* Projects Gallery */}
           <div className="text-center mb-16">
@@ -145,26 +144,31 @@ export default function Home() {
                 Featured Projects
               </span>
             </h3>
-            <div style={{ height: '600px', position: 'relative' }}>
-              <CircularGallery 
-                items={projectsData}
-                bend={3} 
-                textColor="#ffffff" 
-                borderRadius={0.05} 
-              />
+             <div style={{ height: '650px', width: '120%' }}>
+             <CircularGallery 
+             items={projectsData}
+             bend={5} 
+             textColor="#ffffff" 
+             borderRadius={0.075} 
+             />
             </div>
+
           </div>
 
+          <div className="mt-30 w-full px-0">
+
           {/* Skills Section */}
-          <div className="text-center">
-            <h3 className="text-3xl font-bold mb-8 text-white">
+          <div className="text-center mb-16">
+            <h2 className="text-3x1 font-bold mb-8 text-white">
               <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-                Skills & Technologies
+                <b><i>Skills & Technologies</i></b>
               </span>
-            </h3>
+            </h2>
+
+          </div>
             <div className="flex justify-center items-start gap-12">
               {/* Hackathon Badge  */}
-              <div className="flex-shrink-0" style={{ marginTop: '100px' }}>
+              <div className="flex-shrink-0" style={{ marginTop: '25px' }}>
                 <GlareHover
                   width="200px"
                   height="200px"
@@ -175,7 +179,7 @@ export default function Home() {
                   glareOpacity={0.3}
                   glareAngle={-30}
                   glareSize={300}
-                  transitionDuration={800}
+                  transitionDuration={1250}
                   playOnce={false}
                 >
                   <a 
@@ -194,10 +198,10 @@ export default function Home() {
               </div>
 
               {/* Skills Carousel - Center */}
-              <div style={{ height: '400px', position: 'relative' }}>
+              <div style={{ height: '500px', position: 'relative' }}>
                 <Carousel
                   items={skillsData}
-                  baseWidth={350}
+                  baseWidth={1000}
                   autoplay={true}
                   autoplayDelay={3000}
                   pauseOnHover={true}
@@ -207,7 +211,7 @@ export default function Home() {
               </div>
 
               {/* Integrity Badge  */}
-              <div className="flex-shrink-0" style={{ marginTop: '100px' }}>
+              <div className="flex-shrink-0" style={{ marginTop: '25px' }}>
                 <GlareHover
                   width="200px"
                   height="200px"
@@ -218,7 +222,7 @@ export default function Home() {
                   glareOpacity={0.3}
                   glareAngle={-30}
                   glareSize={300}
-                  transitionDuration={800}
+                  transitionDuration={1250}
                   playOnce={false}
                 >
                   <a 
