@@ -155,10 +155,10 @@ export default function Home() {
 
           </div>
 
-          <div className="mt-30 w-full px-0">
+         <div className="mt-8 w-full px-0">
 
           {/* Skills Section */}
-          <div className="text-center mb-16">
+           <div className="text-center mb-4">
             <h2 className="text-3x1 font-bold mb-8 text-white">
               <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 <b><i>Skills & Technologies</i></b>
@@ -243,6 +243,56 @@ export default function Home() {
           </div>
         </div>
       </div>
+<footer className="bg-black text-white py-10 mt-16 border-t border-gray-800">
+  <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-6xl mx-auto px-4">
+
+    {/* Left Icons */}
+    <div className="flex gap-8 text-center">
+      <div>
+        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+          <i className="fab fa-instagram text-3xl"></i>
+        </a>
+        <p className="text-xs mt-2 text-gray-400">Instagram</p>
+      </div>
+      <div>
+        <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+          <i className="fab fa-discord text-3xl"></i>
+        </a>
+        <p className="text-xs mt-2 text-gray-400">Discord</p>
+      </div>
+    </div>
+
+    {/* Center Text */}
+    <div className="text-center">
+      <p className="text-lg font-bold neon-text mb-2">
+        © 2025 Aryan Raj Joshi
+      </p>
+      <p className="text-sm text-blue-400 shimmer">
+        Built in VSCode • Deployed on dreams ✨
+      </p>
+      <p className="text-xs text-gray-500 mt-1 tracking-wide">
+        PORTFOLIO LEVEL: MAX AURA
+      </p>
+    </div>
+
+    {/* Right Icons */}
+    <div className="flex gap-8 text-center">
+      <div>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+          <i className="fab fa-github text-3xl"></i>
+        </a>
+        <p className="text-xs mt-2 text-gray-400">GitHub</p>
+      </div>
+      <div>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+          <i className="fab fa-linkedin text-3xl"></i>
+        </a>
+        <p className="text-xs mt-2 text-gray-400">LinkedIn</p>
+      </div>
+    </div>
+
+  </div>
+</footer>
     </div>
   );
 }

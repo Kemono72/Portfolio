@@ -175,3 +175,50 @@
     transform: translateY(-10px);
   }
 }
+
+/* === Neon Custom Styles === */
+
+.neon-text {
+  color: #8f00ff;
+  text-shadow:
+    0 0 5px #8f00ff,
+    0 0 15px #8f00ff,
+    0 0 30px #4b0082,
+    0 0 45px #8f00ff;
+}
+
+.text-neonBlue {
+  color: #00f7ff;
+}
+
+.neon-icon {
+  transition: all 0.3s ease;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+.neon-icon:hover {
+  color: #fff;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #0ff,
+    0 0 30px #0ff;
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.7;
+    text-shadow: 0 0 4px #0ff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+  }
+  100% {
+    opacity: 0.7;
+    text-shadow: 0 0 4px #0ff;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2.5s infinite ease-in-out;
+}
