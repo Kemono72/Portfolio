@@ -249,13 +249,13 @@ export default function Home() {
     {/* Left Icons */}
     <div className="flex gap-8 text-center">
       <div>
-        <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+        <a href="https://www.instagram.com/kemono_7214/" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-instagram text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">Instagram</p>
       </div>
       <div>
-        <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+        <a href="https://discord.com/users/kemono_72" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-discord text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">Discord</p>
@@ -278,13 +278,13 @@ export default function Home() {
     {/* Right Icons */}
     <div className="flex gap-8 text-center">
       <div>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+        <a href="https://github.com/Kemono72" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-github text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">GitHub</p>
       </div>
       <div>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+        <a href="https://linkedin.com/in/kemono" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-linkedin text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">LinkedIn</p>
