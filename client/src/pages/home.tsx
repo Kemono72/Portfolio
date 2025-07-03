@@ -34,14 +34,16 @@ export default function Home() {
   ];
 
   const projectsData = [
-    { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'E-Commerce Platform' },
-    { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'React Dashboard' },
-    { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Mobile App UI' },
-    { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Portfolio Website' },
-    { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Chat Application' },
-    { image: `https://picsum.photos/seed/6/800/600?grayscale`, text: 'Task Manager' },
-    { image: `https://picsum.photos/seed/7/800/600?grayscale`, text: 'Social Media App' },
-    { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'Weather App' },
+    { image: `https://picsum.photos/seed/1/800/600?grayscale`, text: 'PetsPros: Retail DB' },
+    { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'RC Car: Arduino Build' },
+    { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Clinic Console App' },
+    { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'LLM Rater: Outlier' },
+    { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Kyoku Discord Bot' },
+    { image: `https://picsum.photos/seed/6/800/600?grayscale`, text: 'iOS WeatherCast' },
+    { image: `https://picsum.photos/seed/7/800/600?grayscale`, text: 'Ethical Valorant TriggerBot' },
+    { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'LEGO Manager' },
+    { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'StudentConnect' },
+    { image: `https://picsum.photos/seed/8/800/600?grayscale`, text: 'Truck Route AI' },
   ];
 
   const skillsData = [
