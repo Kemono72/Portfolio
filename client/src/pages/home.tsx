@@ -121,7 +121,15 @@ export default function Home() {
             </h1>
             
             <p className={`text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              I build fast, think deep, and bring digital quests to life.
+              I build fast, think deep and bring digital quests to my life.<br></br> When I’m not coding I’m raging at games or flipping manga pages. Music? I'm bad and I won’t recognize your playlist but I’ll still sing like I’m on tour. 
+             </p>
+
+              <h1 className={`text-3xl lg:text-5xl font-bold mb-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <span className="gradient-text">Quote:</span>
+            </h1>
+
+             <p className={`text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+             <b><i> "The difference between a novice and a master is that a master has failed more times than a novice had tried."</i></b><br></br><b>-Kurosenai</b>
             </p>
             
             <Button 
@@ -243,17 +251,27 @@ export default function Home() {
           </div>
         </div>
       </div>
+
 <footer className="bg-black text-white py-10 mt-16 border-t border-gray-800">
   <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-6xl mx-auto px-4">
 
-    {/* Left Icons */}
+    {/* Left Socials */}
     <div className="flex gap-8 text-center">
+      {/* Gmail */}
       <div>
-        <a href="https://www.instagram.com/kemono_7214/" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
+        <a href="mailto:aryanrajjoshi72@gmail.com" className="neon-icon-muted">
+          <i className="fas fa-envelope text-3xl"></i>
+        </a>
+        <p className="text-xs mt-2 text-gray-400">Gmail</p>
+      </div>
+      {/* Instagram */}
+      <div>
+        <a href="https://instagram.com/kemono_7214/" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-instagram text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">Instagram</p>
       </div>
+      {/* Discord */}
       <div>
         <a href="https://discord.com/users/kemono_72" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-discord text-3xl"></i>
@@ -262,7 +280,7 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Center Text */}
+    {/* Center Section */}
     <div className="text-center">
       <p className="text-lg font-bold neon-text mb-2">
         © 2025 Aryan Raj Joshi
@@ -275,22 +293,30 @@ export default function Home() {
       </p>
     </div>
 
-    {/* Right Icons */}
+    {/* Right Socials */}
     <div className="flex gap-8 text-center">
+      {/* GitHub */}
       <div>
         <a href="https://github.com/Kemono72" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-github text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">GitHub</p>
       </div>
+      {/* LinkedIn */}
       <div>
         <a href="https://linkedin.com/in/kemono" target="_blank" rel="noopener noreferrer" className="neon-icon-muted">
           <i className="fab fa-linkedin text-3xl"></i>
         </a>
         <p className="text-xs mt-2 text-gray-400">LinkedIn</p>
       </div>
+      {/* Outlook */}
+      <div>
+        <a href="mailto:onomekkemono@gmail.com" className="neon-icon-muted">
+          <i className="fas fa-envelope-open-text text-3xl"></i>
+        </a>
+        <p className="text-xs mt-2 text-gray-400">Outlook</p>
+      </div>
     </div>
-
   </div>
 </footer>
     </div>

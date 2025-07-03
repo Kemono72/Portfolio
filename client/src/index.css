@@ -179,11 +179,11 @@
 /* === Neon Custom Styles === */
 
 .neon-text {
-  color: #8f00ff;
+  color: #97d0f7;
   text-shadow:
-    0 0 5px #8f00ff,
-    0 0 15px #8f00ff,
-    0 0 30px #4b0082,
+    0 0 5px #ccabe6,
+    0 0 15px #dcbff3,
+    0 0 30px #b774e7,
     0 0 45px #8f00ff;
 }
 
