@@ -121,14 +121,14 @@ export default function Home() {
             <h1 className={`text-5xl lg:text-7xl font-bold mb-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <span className="gradient-text">Aryan Raj Joshi</span>
             </h1>
-            
-            <p className={`text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              I build fast, think deep and bring digital quests to my life.<br></br> When I’m not coding I’m raging at games or flipping manga pages. Music? I'm bad and I won’t recognize your playlist but I’ll still sing like I’m on tour. 
+           <br></br> 
+            <p className={`text-xl lg:text-1xl text-gray-300 mb-8 leading-relaxed transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              I build fast, think deep and bring digital quests to my life.<br></br> When I’m not coding I’m raging at games or flipping manga pages.<br></br> Music? I'm bad and I won’t recognize your playlist but I’ll still sing like I’m on tour. 
              </p>
-
-              <h1 className={`text-3xl lg:text-5xl font-bold mb-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <br></br>
+              <h3 className={`text-3xl lg:text-4xl font-bold mb-6 transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <span className="gradient-text">Quote:</span>
-            </h1>
+            </h3>
 
              <p className={`text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
              <b><i> "The difference between a novice and a master is that a master has failed more times than a novice had tried."</i></b><br></br><b>-Kurosenai</b>
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
 
         {/* Bottom Section - Projects Gallery */}
-        <div className="mt-32 w-full px-0">
+        <div className="mt-28 w-full px-0">
           
           {/* Projects Gallery */}
           <div className="text-center mb-16">
@@ -154,10 +154,10 @@ export default function Home() {
                 Featured Projects
               </span>
             </h3>
-             <div style={{ height: '650px', width: '120%' }}>
+             <div style={{ height: '700px', width: '100%' }}>
              <CircularGallery 
              items={projectsData}
-             bend={5} 
+             bend={0.5} 
              textColor="#ffffff" 
              borderRadius={0.075} 
              />
@@ -284,7 +284,7 @@ export default function Home() {
 
     {/* Center Section */}
     <div className="text-center">
-      <p className="text-lg font-bold neon-text mb-2">
+      <p className="text-sm text-blue-400 shimmer">
         © 2025 Aryan Raj Joshi
       </p>
       <p className="text-sm text-blue-400 shimmer">

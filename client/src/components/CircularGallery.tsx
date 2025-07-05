@@ -272,26 +272,27 @@ class Media {
   update(scroll: any, direction: string) {
     this.plane.position.x = this.x - scroll.current - this.extra
 
-    const x = this.plane.position.x
-    const H = this.viewport.width / 2
+      const xFromCenter = this.plane.position.x; // Center-based horizontal position
+      const H = this.viewport.width / 1.5;         // Half of the screen width
 
-    if (this.bend === 0) {
-      this.plane.position.y = 0
-      this.plane.rotation.z = 0
-    } else {
-      const B_abs = Math.abs(this.bend)
-      const R = (H * H + B_abs * B_abs) / (2 * B_abs)
-      const effectiveX = Math.min(Math.abs(x), H)
-
-      const arc = R - Math.sqrt(R * R - effectiveX * effectiveX)
-      if (this.bend > 0) {
-        this.plane.position.y = -arc
-        this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R)
+      if (this.bend === 0) {
+        this.plane.position.y = 0;
+        this.plane.rotation.z = 0;
       } else {
-        this.plane.position.y = arc
-        this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R)
-      }
-    }
+        const B_abs = Math.abs(this.bend);
+        const R = (H * H + B_abs * B_abs) / (2 * B_abs); // Arc radius based on bend strength
+        const effectiveX = Math.min(Math.abs(xFromCenter), H); // Clamp to screen half-width
+
+        const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
+
+        if (this.bend > 0) {
+          this.plane.position.y = -arc;
+          this.plane.rotation.z = -Math.sign(xFromCenter) * Math.asin(effectiveX / R);
+        } else {
+          this.plane.position.y = arc;
+          this.plane.rotation.z = Math.sign(xFromCenter) * Math.asin(effectiveX / R);
+        }
+      } 
 
     this.speed = scroll.current - scroll.last
     this.program.uniforms.uTime.value += 0.04
@@ -534,7 +535,18 @@ export default function CircularGallery({
       app.destroy()
     }
   }, [items, bend, textColor, borderRadius, font])
-  return (
-    <div className='circular-gallery' ref={containerRef} />
-  )
+    return (
+  <div
+    className='circular-gallery'
+    ref={containerRef}
+    style={{
+      width: '160vw',
+      marginLeft: '-10vw',
+      overflow: 'visible',
+      height: '100%',
+      position: 'relative'
+    }}
+  />
+)
+
 }
